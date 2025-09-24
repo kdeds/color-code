@@ -21,7 +21,7 @@ export class AppRoot {
             <Route path={match('/challenges/:challenge')} render={({ challenge }) => <app-home challenge={challenge} />}/>
             <Route path={match('/progress')} render={() => <app-progress  />} />
             <Route path={match('/backdoor')} render={() => <app-backdoor  />} />
-            <Route path={match('/')} render={() => <app-entry  />} />
+            <Route path={match('/')} render={() => <app-progress  />} />
           </Router.Switch>
         </main>
       </div>

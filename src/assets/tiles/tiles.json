@@ -1,0 +1,74 @@
+{
+  "01": {
+    "name": "Orange Square",
+    "image": "/assets/tiles/01.svg"
+  },
+  "02": {
+    "name": "Purple Bump",
+    "image": "/assets/tiles/02.svg"
+  },
+  "03": {
+    "name": "Red Diamond",
+    "image": "/assets/tiles/03.svg"
+  },
+  "04": {
+    "name": "Green Triangle",
+    "image": "/assets/tiles/04.svg"
+  },
+  "05": {
+    "name": "Green Triangle Cutout",
+    "image": "/assets/tiles/05.svg"
+  },
+  "06": {
+    "name": "Blue Star",
+    "image": "/assets/tiles/06.svg"
+  },
+  "07": {
+    "name": "White Triangle",
+    "image": "/assets/tiles/07.svg"
+  },
+  "08": {
+    "name": "Yellow Square",
+    "image": "/assets/tiles/08.svg"
+  },
+  "09": {
+    "name": "Red Circle Bite",
+    "image": "/assets/tiles/09.svg"
+  },
+  "10": {
+    "name": "Yellow Lines",
+    "image": "/assets/tiles/10.svg"
+  },
+  "11": {
+    "name": "Dark Green Rectangle",
+    "image": "/assets/tiles/11.svg"
+  },
+  "12": {
+    "name": "Dark Green Parallelogram",
+    "image": "/assets/tiles/12.svg"
+  },
+  "13": {
+    "name": "Purple Bump Cutout",
+    "image": "/assets/tiles/13.svg"
+  },
+  "14": {
+    "name": "Orange Triangle",
+    "image": "/assets/tiles/14.svg"
+  },
+  "15": {
+    "name": "White Stretched Circle Cutout",
+    "image": "/assets/tiles/15.svg"
+  },
+  "16": {
+    "name": "Dark Blue Polygon",
+    "image": "/assets/tiles/16.svg"
+  },
+  "17": {
+    "name": "Blue Star Cutout",
+    "image": "/assets/tiles/17.svg"
+  },
+  "18": {
+    "name": "Dark Blue Semi Circle",
+    "image": "/assets/tiles/18.svg"
+  }
+}

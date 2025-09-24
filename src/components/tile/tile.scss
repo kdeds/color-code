@@ -1,0 +1,64 @@
+
+
+:host {
+  --tile-size: 75px;
+  display: inline-block;
+  width: var(--tile-size);
+  height: var(--tile-size);
+}
+
+:host([variant="canvas"]) {
+  --tile-size: 250px;
+}
+
+:host([variant="button-small"]) {
+  --tile-size: 50px;
+}
+
+:host([selected]) {
+  --tile-outline: 2px solid blue;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  border: 1px gray;
+  cursor: pointer;
+  outline: var(--tile-outline);
+  padding: 4px;
+
+  img {
+    pointer-events: none;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+img {
+  display: block;
+}
+
+.rotate-left {
+  &.rotate-90 {
+    transform: rotate(-90deg);
+  }
+  &.rotate-180 {
+    transform: rotate(-180deg);
+  }
+  &.rotate-270 {
+    transform: rotate(-270deg);
+  }
+}
+.rotate-right {
+  &.rotate-90 {
+    transform: rotate(90deg);
+  }
+  &.rotate-180 {
+    transform: rotate(180deg);
+  }
+  &.rotate-270 {
+    transform: rotate(270deg);
+  }
+}

@@ -1,0 +1,700 @@
+{
+  "challenge-01": {
+    "level": "Starter",
+    "id": "01",
+    "tiles": ["03", "01"],
+    "image": "/assets/challenges/01.png"
+  },
+  "challenge-02": {
+    "level": "Starter",
+    "id": "02",
+    "tiles": ["18", "06"],
+    "image": "/assets/challenges/02.png"
+  },
+  "challenge-03": {
+    "level": "Starter",
+    "id": "03",
+    "tiles": ["09", "08"],
+    "image": "/assets/challenges/03.png"
+  },
+  "challenge-04": {
+    "level": "Starter",
+    "id": "04",
+    "tiles": ["11", "10"],
+    "image": "/assets/challenges/04.png"
+  },
+  "challenge-05": {
+    "level": "Starter",
+    "id": "05",
+    "tiles": ["03", "05"],
+    "image": "/assets/challenges/05.png"
+  },
+  "challenge-06": {
+    "level": "Starter",
+    "id": "06",
+    "tiles": ["09", "18"],
+    "image": "/assets/challenges/06.png"
+  },
+  "challenge-07": {
+    "level": "Starter",
+    "id": "07",
+    "tiles": ["16", "12"],
+    "image": "/assets/challenges/07.png"
+  },
+  "challenge-08": {
+    "level": "Starter",
+    "id": "08",
+    "tiles": ["02", "17"],
+    "image": "/assets/challenges/08.png"
+  },
+  "challenge-09": {
+    "level": "Starter",
+    "id": "09",
+    "tiles": ["14", "13"],
+    "image": "/assets/challenges/09.png"
+  },
+  "challenge-10": {
+    "level": "Starter",
+    "id": "10",
+    "tiles": ["05", "01"],
+    "image": "/assets/challenges/10.png"
+  },
+  "challenge-11": {
+    "level": "Starter",
+    "id": "11",
+    "tiles": ["10", "18"],
+    "image": "/assets/challenges/11.png"
+  },
+  "challenge-12": {
+    "level": "Starter",
+    "id": "12",
+    "tiles": ["05", "12"],
+    "image": "/assets/challenges/12.png"
+  },
+  "challenge-13": {
+    "level": "Starter",
+    "id": "13",
+    "tiles": ["14", "16"],
+    "image": "/assets/challenges/13.png"
+  },
+  "challenge-14": {
+    "level": "Starter",
+    "id": "14",
+    "tiles": ["11", "08"],
+    "image": "/assets/challenges/14.png"
+  },
+  "challenge-15": {
+    "level": "Starter",
+    "id": "15",
+    "tiles": ["04", "14"],
+    "image": "/assets/challenges/15.png"
+  },
+  "challenge-16": {
+    "level": "Starter",
+    "id": "16",
+    "tiles": ["03", "12"],
+    "image": "/assets/challenges/16.png"
+  },
+  "challenge-17": {
+    "level": "Starter",
+    "id": "17",
+    "tiles": ["06", "04"],
+    "image": "/assets/challenges/17.png"
+  },
+  "challenge-18": {
+    "level": "Starter",
+    "id": "18",
+    "tiles": ["18", "11"],
+    "image": "/assets/challenges/18.png"
+  },
+  "challenge-19": {
+    "level": "Starter",
+    "id": "19",
+    "tiles": ["17", "16"],
+    "image": "/assets/challenges/19.png"
+  },
+  "challenge-20": {
+    "level": "Starter",
+    "id": "20",
+    "tiles": ["06", "01", "04"],
+    "image": "/assets/challenges/20.png"
+  },
+  "challenge-21": {
+    "level": "Starter",
+    "id": "21",
+    "tiles": ["13", "17", "09"],
+    "image": "/assets/challenges/21.png"
+  },
+  "challenge-22": {
+    "level": "Starter",
+    "id": "22",
+    "tiles": ["18", "01", "10"],
+    "image": "/assets/challenges/22.png"
+  },
+  "challenge-23": {
+    "level": "Starter",
+    "id": "23",
+    "tiles": ["08", "11", "03"],
+    "image": "/assets/challenges/23.png"
+  },
+  "challenge-24": {
+    "level": "Starter",
+    "id": "24",
+    "tiles": ["13", "14", "09"],
+    "image": "/assets/challenges/24.png"
+  },
+  "challenge-25": {
+    "level": "Starter",
+    "id": "25",
+    "tiles": ["01", "16", "12"],
+    "image": "/assets/challenges/25.png"
+  },
+  "challenge-26": {
+    "level": "Junior",
+    "id": "26",
+    "tiles": ["02", "13"],
+    "image": "/assets/challenges/26.png"
+  },
+  "challenge-27": {
+    "level": "Junior",
+    "id": "27",
+    "tiles": ["06", "15"],
+    "image": "/assets/challenges/27.png"
+  },
+  "challenge-28": {
+    "level": "Junior",
+    "id": "28",
+    "tiles": ["16", "18"],
+    "image": "/assets/challenges/28.png"
+  },
+  "challenge-29": {
+    "level": "Junior",
+    "id": "29",
+    "tiles": ["03", "01", "05"],
+    "image": "/assets/challenges/29.png"
+  },
+  "challenge-30": {
+    "level": "Junior",
+    "id": "30",
+    "tiles": ["16", "14", "08"],
+    "image": "/assets/challenges/30.png"
+  },
+  "challenge-31": {
+    "level": "Junior",
+    "id": "31",
+    "tiles": ["08", "11", "07"],
+    "image": "/assets/challenges/31.png"
+  },
+  "challenge-32": {
+    "level": "Junior",
+    "id": "32",
+    "tiles": ["04", "18", "09"],
+    "image": "/assets/challenges/32.png"
+  },
+  "challenge-33": {
+    "level": "Junior",
+    "id": "33",
+    "tiles": ["18", "10", "17"],
+    "image": "/assets/challenges/33.png"
+  },
+  "challenge-34": {
+    "level": "Junior",
+    "id": "34",
+    "tiles": ["05", "07"],
+    "image": "/assets/challenges/34.png"
+  },
+  "challenge-35": {
+    "level": "Junior",
+    "id": "35",
+    "tiles": ["01", "09", "14"],
+    "image": "/assets/challenges/35.png"
+  },
+  "challenge-36": {
+    "level": "Junior",
+    "id": "36",
+    "tiles": ["08", "13", "10"],
+    "image": "/assets/challenges/36.png"
+  },
+  "challenge-37": {
+    "level": "Junior",
+    "id": "37",
+    "tiles": ["06", "11", "17"],
+    "image": "/assets/challenges/37.png"
+  },
+  "challenge-38": {
+    "level": "Junior",
+    "id": "38",
+    "tiles": ["03", "07", "10"],
+    "image": "/assets/challenges/38.png"
+  },
+  "challenge-39": {
+    "level": "Junior",
+    "id": "39",
+    "tiles": ["11", "05", "12"],
+    "image": "/assets/challenges/39.png"
+  },
+  "challenge-40": {
+    "level": "Junior",
+    "id": "40",
+    "tiles": ["16", "06", "17"],
+    "image": "/assets/challenges/40.png"
+  },
+  "challenge-41": {
+    "level": "Junior",
+    "id": "41",
+    "tiles": ["03", "16", "09"],
+    "image": "/assets/challenges/41.png"
+  },
+  "challenge-42": {
+    "level": "Junior",
+    "id": "42",
+    "tiles": ["02", "05", "13"],
+    "image": "/assets/challenges/42.png"
+  },
+  "challenge-43": {
+    "level": "Junior",
+    "id": "43",
+    "tiles": ["06", "14", "17"],
+    "image": "/assets/challenges/43.png"
+  },
+  "challenge-44": {
+    "level": "Junior",
+    "id": "44",
+    "tiles": ["03", "12", "07"],
+    "image": "/assets/challenges/44.png"
+  },
+  "challenge-45": {
+    "level": "Junior",
+    "id": "45",
+    "tiles": ["02", "07", "13"],
+    "image": "/assets/challenges/45.png"
+  },
+  "challenge-46": {
+    "level": "Junior",
+    "id": "46",
+    "tiles": ["10", "13", "15"],
+    "image": "/assets/challenges/46.png"
+  },
+  "challenge-47": {
+    "level": "Junior",
+    "id": "47",
+    "tiles": ["04", "05", "17"],
+    "image": "/assets/challenges/47.png"
+  },
+  "challenge-48": {
+    "level": "Junior",
+    "id": "48",
+    "tiles": ["18", "07", "16"],
+    "image": "/assets/challenges/48.png"
+  },
+  "challenge-49": {
+    "level": "Junior",
+    "id": "49",
+    "tiles": ["11", "06", "12"],
+    "image": "/assets/challenges/49.png"
+  },
+  "challenge-50": {
+    "level": "Junior",
+    "id": "50",
+    "tiles": ["02", "18", "13"],
+    "image": "/assets/challenges/50.png"
+  },
+  "challenge-51": {
+    "level": "Expert",
+    "id": "51",
+    "tiles": [
+      "05", "09", "16", "17"
+    ],
+    "image": "/assets/challenges/51.png"
+  },
+  "challenge-52": {
+    "level": "Expert",
+    "id": "52",
+    "tiles": [
+      "01", "10", "15", "13"
+    ],
+    "image": "/assets/challenges/52.png"
+  },
+  "challenge-53": {
+    "level": "Expert",
+    "id": "53",
+    "tiles": [
+      "02", "11", "16", "08"
+    ],
+    "image": "/assets/challenges/53.png"
+  },
+  "challenge-54": {
+    "level": "Expert",
+    "id": "54",
+    "tiles": [
+      "05", "14", "17", "18"
+    ],
+    "image": "/assets/challenges/54.png"
+  },
+  "challenge-55": {
+    "level": "Expert",
+    "id": "55",
+    "tiles": [
+      "06", "14", "16", "17"
+    ],
+    "image": "/assets/challenges/55.png"
+  },
+  "challenge-56": {
+    "level": "Expert",
+    "id": "56",
+    "tiles": [
+      "06", "04", "07", "03"
+    ],
+    "image": "/assets/challenges/56.png"
+  },
+  "challenge-57": {
+    "level": "Expert",
+    "id": "57",
+    "tiles": [
+      "06", "16", "17", "08"
+    ],
+    "image": "/assets/challenges/57.png"
+  },
+  "challenge-58": {
+    "level": "Expert",
+    "id": "58",
+    "tiles": [
+      "03", "13", "11", "09"
+    ],
+    "image": "/assets/challenges/58.png"
+  },
+  "challenge-59": {
+    "level": "Expert",
+    "id": "59",
+    "tiles": [
+      "18", "10", "16", "08"
+    ],
+    "image": "/assets/challenges/59.png"
+  },
+  "challenge-60": {
+    "level": "Expert",
+    "id": "60",
+    "tiles": [
+      "14", "05", "01", "04"
+    ],
+    "image": "/assets/challenges/60.png"
+  },
+  "challenge-61": {
+    "level": "Expert",
+    "id": "61",
+    "tiles": [
+      "09", "13", "12", "15"
+    ],
+    "image": "/assets/challenges/61.png"
+  },
+  "challenge-62": {
+    "level": "Expert",
+    "id": "62",
+    "tiles": [
+      "03", "05", "09", "15"
+    ],
+    "image": "/assets/challenges/62.png"
+  },
+  "challenge-63": {
+    "level": "Expert",
+    "id": "63",
+    "tiles": [
+      "11", "05", "08", "12"
+    ],
+    "image": "/assets/challenges/63.png"
+  },
+  "challenge-64": {
+    "level": "Expert",
+    "id": "64",
+    "tiles": [
+      "16", "07", "06", "11"
+    ],
+    "image": "/assets/challenges/64.png"
+  },
+  "challenge-65": {
+    "level": "Expert",
+    "id": "65",
+    "tiles": [
+      "12", "11", "15", "13"
+    ],
+    "image": "/assets/challenges/65.png"
+  },
+  "challenge-66": {
+    "level": "Expert",
+    "id": "66",
+    "tiles": [
+      "01", "18", "07", "14"
+    ],
+    "image": "/assets/challenges/66.png"
+  },
+  "challenge-67": {
+    "level": "Expert",
+    "id": "67",
+    "tiles": [
+      "06", "07", "17", "16"
+    ],
+    "image": "/assets/challenges/67.png"
+  },
+  "challenge-68": {
+    "level": "Expert",
+    "id": "68",
+    "tiles": [
+      "01", "05", "15", "14"
+    ],
+    "image": "/assets/challenges/68.png"
+  },
+  "challenge-69": {
+    "level": "Expert",
+    "id": "69",
+    "tiles": [
+      "02", "08", "13", "10"
+    ],
+    "image": "/assets/challenges/69.png"
+  },
+  "challenge-70": {
+    "level": "Expert",
+    "id": "70",
+    "tiles": [
+      "06", "05", "04", "17"
+    ],
+    "image": "/assets/challenges/70.png"
+  },
+  "challenge-71": {
+    "level": "Expert",
+    "id": "71",
+    "tiles": [
+      "02", "05", "07"
+    ],
+    "image": "/assets/challenges/71.png"
+  },
+  "challenge-72": {
+    "level": "Expert",
+    "id": "72",
+    "tiles": [
+      "04", "12", "15"
+    ],
+    "image": "/assets/challenges/72.png"
+  },
+  "challenge-73": {
+    "level": "Expert",
+    "id": "73",
+    "tiles": [
+      "18", "02", "16", "13"
+    ],
+    "image": "/assets/challenges/73.png"
+  },
+  "challenge-74": {
+    "level": "Expert",
+    "id": "74",
+    "tiles": ["11", "03", "12", "09"],
+    "image": "/assets/challenges/74.png"
+  },
+  "challenge-75": {
+    "level": "Expert",
+    "id": "75",
+    "tiles": [
+      "01", "07", "06", "15"
+    ],
+    "image": "/assets/challenges/75.png"
+  },
+  "challenge-76": {
+    "level": "Master",
+    "id": "76",
+    "tiles": [
+      "03", "08", "01", "16"
+    ],
+    "image": "/assets/challenges/76.png"
+  },
+  "challenge-77": {
+    "level": "Master",
+    "id": "77",
+    "tiles": [
+      "11", "05", "12", "15", "13"
+    ],
+    "image": "/assets/challenges/77.png"
+  },
+  "challenge-78": {
+    "level": "Master",
+    "id": "78",
+    "tiles": [
+      "18", "08", "07", "16", "10"
+    ],
+    "image": "/assets/challenges/78.png"
+  },
+  "challenge-79": {
+    "level": "Master",
+    "id": "79",
+    "tiles": [
+      "03", "07", "08", "12", "09"
+    ],
+    "image": "/assets/challenges/79.png"
+  },
+  "challenge-80": {
+    "level": "Master",
+    "id": "80",
+    "tiles": [
+      "03", "04", "05", "17", "18"
+    ],
+    "image": "/assets/challenges/80.png"
+  },
+  "challenge-81": {
+    "level": "Master",
+    "id": "81",
+    "tiles": [
+      "05", "08", "14", "16", "07"
+    ],
+    "image": "/assets/challenges/81.png"
+  },
+  "challenge-82": {
+    "level": "Master",
+    "id": "82",
+    "tiles": [
+      "02", "03", "12", "13", "09"
+    ],
+    "image": "/assets/challenges/82.png"
+  },
+  "challenge-83": {
+    "level": "Master",
+    "id": "83",
+    "tiles": [
+      "11", "05", "16", "12", "03"
+    ],
+    "image": "/assets/challenges/83.png"
+  },
+  "challenge-84": {
+    "level": "Master",
+    "id": "84",
+    "tiles": [
+      "16", "01", "18", "08", "11"
+    ],
+    "image": "/assets/challenges/84.png"
+  },
+  "challenge-85": {
+    "level": "Master",
+    "id": "85",
+    "tiles": [
+      "11", "07", "14", "12"
+    ],
+    "image": "/assets/challenges/85.png"
+  },
+  "challenge-86": {
+    "level": "Master",
+    "id": "86",
+    "tiles": [
+      "05", "18", "08", "07", "12"
+    ],
+    "image": "/assets/challenges/86.png"
+  },
+  "challenge-87": {
+    "level": "Master",
+    "id": "87",
+    "tiles": [
+      "01", "14", "16", "18", "06"
+    ],
+    "image": "/assets/challenges/87.png"
+  },
+  "challenge-88": {
+    "level": "Master",
+    "id": "88",
+    "tiles": [
+      "05", "10", "08", "04", "15"
+    ],
+    "image": "/assets/challenges/88.png"
+  },
+  "challenge-89": {
+    "level": "Master",
+    "id": "89",
+    "tiles": [
+      "10", "16", "08", "12", "15"
+    ],
+    "image": "/assets/challenges/89.png"
+  },
+  "challenge-90": {
+    "level": "Master",
+    "id": "90",
+    "tiles": [
+      "02", "13", "07", "12", "03"
+    ],
+    "image": "/assets/challenges/90.png"
+  },
+  "challenge-91": {
+    "level": "Master",
+    "id": "91",
+    "tiles": [
+      "05", "07", "06", "15", "17"
+    ],
+    "image": "/assets/challenges/91.png"
+  },
+  "challenge-92": {
+    "level": "Master",
+    "id": "92",
+    "tiles": [
+      "14", "11", "01", "12", "15"
+    ],
+    "image": "/assets/challenges/92.png"
+  },
+  "challenge-93": {
+    "level": "Master",
+    "id": "93",
+    "tiles": [
+      "05", "18", "07", "10", "11"
+    ],
+    "image": "/assets/challenges/93.png"
+  },
+  "challenge-94": {
+    "level": "Master",
+    "id": "94",
+    "tiles": [
+      "02", "12", "07", "16", "15"
+    ],
+    "image": "/assets/challenges/94.png"
+  },
+  "challenge-95": {
+    "level": "Master",
+    "id": "95",
+    "tiles": [
+      "11", "07", "12", "15"
+    ],
+    "image": "/assets/challenges/95.png"
+  },
+  "challenge-96": {
+    "level": "Master",
+    "id": "96",
+    "tiles": [
+      "14", "06", "01", "05", "07"
+    ],
+    "image": "/assets/challenges/96.png"
+  },
+  "challenge-97": {
+    "level": "Master",
+    "id": "97",
+    "tiles": [
+      "05", "11", "04", "12"
+    ],
+    "image": "/assets/challenges/97.png"
+  },
+  "challenge-98": {
+    "level": "Master",
+    "id": "98",
+    "tiles": [
+      "03", "07", "16", "09", "13"
+    ],
+    "image": "/assets/challenges/98.png"
+  },
+  "challenge-99": {
+    "level": "Master",
+    "id": "99",
+    "tiles": [
+      "12", "18", "10", "11", "16"
+    ],
+    "image": "/assets/challenges/99.png"
+  },
+  "challenge-100": {
+    "level": "Master",
+    "id": "100",
+    "tiles": [
+      "02", "14", "17", "13", "15"
+    ],
+    "image": "/assets/challenges/100.png"
+  }
+}

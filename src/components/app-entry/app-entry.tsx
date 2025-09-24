@@ -3,11 +3,11 @@ import challengeJson from '../../assets/challenges/challengeData.json';
 import { Router } from '../..';
 
 @Component({
-  tag: 'app-progress',
-  styleUrl: 'app-progress.scss',
+  tag: 'app-entry',
+  styleUrl: 'app-entry.scss',
   shadow: true,
 })
-export class AppProgress {
+export class AppEntry {
   @Element() el;
   @State() completedLevels: string[] = [];
   @State() forceRender: number = 0;

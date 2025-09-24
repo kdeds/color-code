@@ -15,6 +15,9 @@
     "level": "Starter",
     "id": "03",
     "tiles": ["09", "08"],
+    "alternateSolutions": [
+      ["08", "09"]
+    ],
     "image": "/assets/challenges/03.png"
   },
   "challenge-04": {

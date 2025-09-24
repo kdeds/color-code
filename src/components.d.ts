@@ -6,7 +6,15 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AppBackdoor {
+    }
+    interface AppEntry {
+    }
     interface AppHome {
+        /**
+          * @default false
+         */
+        "autoplay": boolean;
         "challenge": string;
         "challengeImage": string;
     }
@@ -42,6 +50,18 @@ export interface CcTileCustomEvent<T> extends CustomEvent<T> {
     target: HTMLCcTileElement;
 }
 declare global {
+    interface HTMLAppBackdoorElement extends Components.AppBackdoor, HTMLStencilElement {
+    }
+    var HTMLAppBackdoorElement: {
+        prototype: HTMLAppBackdoorElement;
+        new (): HTMLAppBackdoorElement;
+    };
+    interface HTMLAppEntryElement extends Components.AppEntry, HTMLStencilElement {
+    }
+    var HTMLAppEntryElement: {
+        prototype: HTMLAppEntryElement;
+        new (): HTMLAppEntryElement;
+    };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
     var HTMLAppHomeElement: {
@@ -78,6 +98,8 @@ declare global {
         new (): HTMLCcTileElement;
     };
     interface HTMLElementTagNameMap {
+        "app-backdoor": HTMLAppBackdoorElement;
+        "app-entry": HTMLAppEntryElement;
         "app-home": HTMLAppHomeElement;
         "app-progress": HTMLAppProgressElement;
         "app-root": HTMLAppRootElement;
@@ -85,7 +107,15 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AppBackdoor {
+    }
+    interface AppEntry {
+    }
     interface AppHome {
+        /**
+          * @default false
+         */
+        "autoplay"?: boolean;
         "challenge"?: string;
         "challengeImage"?: string;
     }
@@ -114,6 +144,8 @@ declare namespace LocalJSX {
         "zIndex"?: number;
     }
     interface IntrinsicElements {
+        "app-backdoor": AppBackdoor;
+        "app-entry": AppEntry;
         "app-home": AppHome;
         "app-progress": AppProgress;
         "app-root": AppRoot;
@@ -124,6 +156,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-backdoor": LocalJSX.AppBackdoor & JSXBase.HTMLAttributes<HTMLAppBackdoorElement>;
+            "app-entry": LocalJSX.AppEntry & JSXBase.HTMLAttributes<HTMLAppEntryElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-progress": LocalJSX.AppProgress & JSXBase.HTMLAttributes<HTMLAppProgressElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;

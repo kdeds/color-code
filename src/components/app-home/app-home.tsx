@@ -1,4 +1,4 @@
-import { Component, Element, h, Listen, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, Fragment, h, Listen, Prop, State, Watch } from '@stencil/core';
 // import { Router } from "../../";
 import tileJson from '../../assets/tiles/tiles.json';
 import challengeJson from '../../assets/challenges/challengeData.json';
@@ -19,6 +19,9 @@ export class AppHome {
   @Prop() challenge: string;
   @Prop({ mutable: true }) challengeImage: string;
   @State() completed: boolean;
+  @State() completionString: string = '';
+  @Prop({mutable: true}) autoplay: boolean = false;
+  private autoplayTimeout: number;
 
   componentWillLoad() {
     this.initializeChallenge();
@@ -37,6 +40,12 @@ export class AppHome {
       });
     }
 
+    if(localStorage.getItem('color-code-autoplay')) {
+      this.autoplay = localStorage.getItem('color-code-autoplay') == 'true';
+    } else {
+      this.enableAutoplay(); // default
+    }
+
     this.challengeImage = challengeJson[`challenge-${this.challenge}`]['image'];
   }
 
@@ -46,6 +55,7 @@ export class AppHome {
     this.canvasTiles = [];
     this.selectedTileId = '';
     this.completed = false;
+    this.completionString = '';
     this.initializeChallenge();
   }
 
@@ -84,7 +94,7 @@ export class AppHome {
   handleSendBackward() {
     let oldIndex = this.canvasTiles.indexOf(this.selectedTileRef.tileId);
 
-    if (oldIndex > -1) {
+    if (oldIndex > 0) {
       // Remove the item from its current position
       let removedItem = this.canvasTiles.splice(oldIndex, 1)[0];
       // Insert the item at the new desired position
@@ -132,17 +142,30 @@ export class AppHome {
 
   handleSolutionCheck() {
     let solutionTiles = challengeJson[`challenge-${this.challenge}`]['tiles'];
+    let isCompleted = false;
     if (this.canvasTiles.join(',') == solutionTiles.join(',')) {
-      alert('Correct!');
+      isCompleted = true;
+    } else if (challengeJson[`challenge-${this.challenge}`]['alternateSolutions'] && challengeJson[`challenge-${this.challenge}`]['alternateSolutions'].length > 0) {
+      challengeJson[`challenge-${this.challenge}`]['alternateSolutions'].forEach(altSolution => {
+        if (this.canvasTiles.join(',') == altSolution.join(',')) {
+          isCompleted = true;
+        }
+      });
+    }
+
+    if (isCompleted) {
       let completedChallenges = localStorage.getItem('color-code-completed-challenges')?.split(',') || [];
       completedChallenges.push(this.challenge);
       localStorage.setItem('color-code-completed-challenges', completedChallenges.sort().join(','));
       this.completed = true;
-      if(confirm("Go to next puzzle?")) {
-        Router.push(`/challenges/${(parseInt(this.challenge) + 1).toString().padStart(2, '0')}`);
+      this.completionString = "Correct! Challenge complete";
+      if (this.autoplay) {
+        this.autoplayTimeout = window.setTimeout(() => {
+          Router.push(`/challenges/${(parseInt(this.challenge) + 1).toString().padStart(2, '0')}`);
+        }, 3000);
       }
     } else {
-      alert('Keep trying...');
+      this.completionString = 'Keep trying...';
     }
   }
 
@@ -160,6 +183,17 @@ export class AppHome {
     }
   }
 
+  disableAutoplay() {
+    localStorage.setItem('color-code-autoplay', 'false');
+    this.autoplay = localStorage.getItem('color-code-autoplay') == 'true';
+    window.clearTimeout(this.autoplayTimeout);
+  }
+
+  enableAutoplay() {
+    localStorage.setItem('color-code-autoplay', 'true');
+    this.autoplay = localStorage.getItem('color-code-autoplay') == 'true';
+  }
+
   render() {
     return (
       <div class="app-home">
@@ -170,11 +204,21 @@ export class AppHome {
 
         <div class="canvas-container">
           <div class="canvas">
-            <slot name="canvas-tile" onSlotchange={this.handleCanvasTiles.bind(this)} />
+            <slot name="canvas-tile" onSlotchange={this.handleCanvasTiles.bind(this)}>
+                <img src="/assets/tiles/00.svg" width="250" height="250" />
+              </slot>
+            <div class="controls">
+              <button onClick={this.handleRotateLeft.bind(this)} title="Rotate Left">&#8624;</button>
+              <button onClick={this.handleRotateRight.bind(this)} title="Rotate Right">&#8625;</button>
+              <button onClick={this.handleBringForward.bind(this)} title="Bring Forward">&#10515;</button>
+              <button onClick={this.handleSendBackward.bind(this)} title="Send Backward">&#10514;</button>
+              <button onClick={this.handleRemove.bind(this)} title="Remove">&times;</button>
+              <button onClick={this.handleSolutionCheck.bind(this)} title="Check Solution" class="check">&#10003;</button>
+            </div>
           </div>
           <div class="current-tiles" ref={el => (this.currentTilesRef = el)}>
             <ol>
-              {this.canvasTiles.map((tile) => {
+              {this.canvasTiles.map(tile => {
                 return (
                   <li key={Math.random()}>
                     <cc-tile variant="button-small" tile-id={tile} tile-image={tileJson[tile]['image']} tile-name={tileJson[tile]['name']} selected={tile == this.selectedTileId} />
@@ -185,35 +229,31 @@ export class AppHome {
           </div>
           <div class="challenge">
             <img src={this.challengeImage} />
-            {this.completed && <h3 class="complete">Challenge Complete!</h3>}
             <div class="challenge-controls">
-              <button onClick={this.goToPrevChallenge.bind(this)} disabled={this.challenge == '01'}>
+              <button onClick={this.goToPrevChallenge.bind(this)} disabled={this.challenge == '01'} title="Previous Challenge">
                 {'<'}
               </button>
               <h4>{`${challengeJson[`challenge-${this.challenge}`]['level']} - ${this.challenge}`}</h4>
-              <button onClick={this.goToNextChallenge.bind(this)} disabled={this.challenge == '60'}>
+              <button onClick={this.goToNextChallenge.bind(this)} disabled={this.challenge == '100'} title="Next Challenge">
                 {'>'}
               </button>
             </div>
           </div>
         </div>
 
-        <div class="controls">
-          <button onClick={this.handleRotateLeft.bind(this)}>Rotate Left</button>
-          <button onClick={this.handleRotateRight.bind(this)}>Rotate Right</button>
-          <button onClick={this.handleBringForward.bind(this)}>Bring Forward</button>
-          <button onClick={this.handleSendBackward.bind(this)}>Send Backward</button>
-          <button onClick={this.handleRemove.bind(this)}>Remove</button>
-        </div>
-
         <div class="solution">
-          <button onClick={this.handleSolutionCheck.bind(this)}>Check Solution</button>
+          <h4>{this.completionString}</h4>
+          {this.autoplay && this.completed && (
+            <Fragment>
+              <h6>Autoplaying next level...</h6>
+              <button onClick={()=> {this.disableAutoplay()}}>Disable Autoplay</button>
+            </Fragment>
+          )}
+          {!this.autoplay && this.completed && (
+            <button onClick={()=> {this.enableAutoplay()}}>Enable Autoplay</button>
+          )}
         </div>
 
-        {/* <button
-          onClick={() => Router.push('/profile/stencil')}
-        >
-        </button> */}
       </div>
     );
   }

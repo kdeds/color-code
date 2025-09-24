@@ -7,13 +7,16 @@
 .tiles {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 16px;
+  column-gap: 8px;
   row-gap: 8px;
   height: 158px;
   overflow-y: auto;
   background-color: #ddd;
   padding: 8px;
   justify-content: center;
+  @media screen and (min-width: 880px) {
+    column-gap: 16px;
+  }
 }
 
 .canvas-container {
@@ -23,20 +26,23 @@
   justify-content: space-between;
   flex-wrap: wrap;
   .canvas {
-    width: 300px;
-    height: 300px;
-    ::slotted(cc-tile) {
+    width: 280px;
+    height: 250px;
+    ::slotted(cc-tile), img {
       position: absolute;
+      left: 30px;
     }
   }
   .current-tiles {
     ol {
+      margin-top: 0px;
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
       max-height: 300px;
       column-gap: 32px;
       row-gap: 8px;
+      padding-left: 20px;
     }
   }
 
@@ -49,6 +55,22 @@
      display: flex;
      gap: 16px;
      justify-content: space-around; 
+
+      h4 {
+        margin: 0;
+        line-height: 40px;
+      }
+      button {
+        width: 40px;
+        height: 40px;
+        background-color: lightgray;
+        border: 1px solid black;
+        color: black;
+        width: 40px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: medium;
+        border-radius: 8px;
+      }
     }
   }
 }
@@ -56,31 +78,31 @@
 .controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 8px;
+  margin-top: 258px;
   button {
     background-color: #9EBE4B;
     border: 2px solid darkgreen;
     color: black;
-    padding: 8px;
+    width: 40px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: medium;
+    font-size: x-large;
     border-radius: 8px;
+
+    &.check {
+      background-color: #305D9E;
+      border: 2px solid black;
+      color: white;
+    }
   }
 }
 
 .solution {
-  margin-top: 32px;
-  text-align: center;
-  button {
-    background-color: #305D9E;
-    border: 2px solid black;
-    color: white;
-    padding: 8px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: large;
-    border-radius: 8px;
+  h4 {
+    margin-bottom: 0px;
   }
-}
-h3.complete {
-  color: green;
+  h6 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
 }

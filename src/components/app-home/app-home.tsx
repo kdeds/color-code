@@ -20,7 +20,7 @@ export class AppHome {
   @Prop({ mutable: true }) challengeImage: string;
   @State() completed: boolean;
   @State() completionString: string = '';
-  @Prop({mutable: true}) autoplay: boolean = false;
+  @Prop({ mutable: true }) autoplay: boolean = false;
   private autoplayTimeout: number;
 
   componentWillLoad() {
@@ -40,7 +40,7 @@ export class AppHome {
       });
     }
 
-    if(localStorage.getItem('color-code-autoplay')) {
+    if (localStorage.getItem('color-code-autoplay')) {
       this.autoplay = localStorage.getItem('color-code-autoplay') == 'true';
     } else {
       this.enableAutoplay(); // default
@@ -158,7 +158,7 @@ export class AppHome {
       completedChallenges.push(this.challenge);
       localStorage.setItem('color-code-completed-challenges', completedChallenges.sort().join(','));
       this.completed = true;
-      this.completionString = "Correct! Challenge complete";
+      this.completionString = 'Correct! Challenge complete';
       if (this.autoplay) {
         this.autoplayTimeout = window.setTimeout(() => {
           Router.push(`/challenges/${(parseInt(this.challenge) + 1).toString().padStart(2, '0')}`);
@@ -166,6 +166,9 @@ export class AppHome {
       }
     } else {
       this.completionString = 'Keep trying...';
+      window.setTimeout(() => {
+       this.completionString = '';
+      }, 3000);
     }
   }
 
@@ -205,15 +208,51 @@ export class AppHome {
         <div class="canvas-container">
           <div class="canvas">
             <slot name="canvas-tile" onSlotchange={this.handleCanvasTiles.bind(this)}>
-                <img src="/assets/tiles/00.svg" width="250" height="250" />
-              </slot>
+              <img src="/assets/tiles/00.svg" width="250" height="250" />
+            </slot>
             <div class="controls">
-              <button onClick={this.handleRotateLeft.bind(this)} title="Rotate Left">&#8624;</button>
-              <button onClick={this.handleRotateRight.bind(this)} title="Rotate Right">&#8625;</button>
-              <button onClick={this.handleBringForward.bind(this)} title="Bring Forward">&#10515;</button>
-              <button onClick={this.handleSendBackward.bind(this)} title="Send Backward">&#10514;</button>
-              <button onClick={this.handleRemove.bind(this)} title="Remove">&times;</button>
-              <button onClick={this.handleSolutionCheck.bind(this)} title="Check Solution" class="check">&#10003;</button>
+              <button onClick={this.handleRotateLeft.bind(this)} title="Rotate Left">
+                &#8624;
+              </button>
+              <button onClick={this.handleRotateRight.bind(this)} title="Rotate Right">
+                &#8625;
+              </button>
+              <button onClick={this.handleBringForward.bind(this)} title="Bring Forward">
+                &#10515;
+              </button>
+              <button onClick={this.handleSendBackward.bind(this)} title="Send Backward">
+                &#10514;
+              </button>
+              <button onClick={this.handleRemove.bind(this)} title="Remove">
+                &times;
+              </button>
+              <button onClick={this.handleSolutionCheck.bind(this)} title="Check Solution" class="check">
+                &#10003;
+              </button>
+            </div>
+            <div class={`solution ${this.completed ? '' : 'hidden'}`}>
+              <h4>{this.completionString}</h4>
+              {this.autoplay && this.completed && (
+                <Fragment>
+                  <h5>Autoplaying next level...</h5>
+                  <button
+                    onClick={() => {
+                      this.disableAutoplay();
+                    }}
+                  >
+                    Disable Autoplay
+                  </button>
+                </Fragment>
+              )}
+              {!this.autoplay && this.completed && (
+                <button
+                  onClick={() => {
+                    this.enableAutoplay();
+                  }}
+                >
+                  Enable Autoplay
+                </button>
+              )}
             </div>
           </div>
           <div class="current-tiles" ref={el => (this.currentTilesRef = el)}>
@@ -240,20 +279,7 @@ export class AppHome {
             </div>
           </div>
         </div>
-
-        <div class="solution">
-          <h4>{this.completionString}</h4>
-          {this.autoplay && this.completed && (
-            <Fragment>
-              <h6>Autoplaying next level...</h6>
-              <button onClick={()=> {this.disableAutoplay()}}>Disable Autoplay</button>
-            </Fragment>
-          )}
-          {!this.autoplay && this.completed && (
-            <button onClick={()=> {this.enableAutoplay()}}>Enable Autoplay</button>
-          )}
-        </div>
-
+          {!this.completed && <h4 class="keep-trying">{this.completionString}</h4>}
       </div>
     );
   }
